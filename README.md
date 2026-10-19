@@ -3,7 +3,7 @@
 
 Project Etch-A-Sketch from The Odin Project.
 
-Using HTML, CSS (flexbox for layout) and Javascript.
+Using HTML, CSS (Flexbox for layout), and JavaScript.
 
 https://webdevelopmentportfolio.github.io/Project-Etch-A-Sketch/
 
