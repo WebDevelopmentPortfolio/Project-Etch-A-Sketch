@@ -39,10 +39,11 @@ body {
 
 .heading {
     display: flex;
-    align-items: center;
-    text-align: center;
+    justify-content: center;
+    align-items: end;
     padding-top: 10px;
-    flex: 1 1 100%;
+    padding-bottom: 20px;
+    flex: 0 1 100%;
 
 
 }
@@ -50,8 +51,8 @@ body {
 .heading-title {
     font-weight: bold;
     font-size: 28px;
-    padding-bottom: 10px;
     color: gold;
+
 
 }
 
@@ -64,7 +65,7 @@ body {
     align-items: center;
     width: 100%;
     padding-bottom: 8px;
-    flex: 1 1 100%;
+    flex: 0 1 100%;
 }
 
 
@@ -213,7 +214,6 @@ dialog:open {
     width: 100%;
     background-color: white;
     box-sizing: border-box;
-   
     aspect-ratio: 1 /1
    
     
