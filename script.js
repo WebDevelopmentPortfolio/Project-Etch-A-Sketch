@@ -112,8 +112,8 @@ continueBtn.addEventListener('click', () => {
     const input = Number(inputSquares.value);
     inputSquares.select(); //just highlight the entered text so user can easily change text
 
-    if (isNaN(input) || input < 2 || input > 100) {
-        alert("Please enter a valid number between 2 and 100");
+    if (isNaN(input) || input < 16 || input > 100) {
+        alert("Please enter a valid number between 16 and 100");
 
     }
     else {
