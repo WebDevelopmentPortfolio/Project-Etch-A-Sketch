@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="heading">
-        <div class="heading-title">A simple digital Etch-A-Sketch</div>
-        <div class="description">To start drawing, press your mouse down and glide over the squares to create beautiful trails of color.</div>
-        <div class="description">To stop drawing, simply release the mouse. </div>
-        <div class="description">Click any colored square to remove the color.</div>
-    </div>
-    <div class="button-container">
-        <button class="change-number-squares">Click Me to change the number of squares</button> 
-        <button class="clear-colors">Click Me to clear all colors</button>    
+    <div class="sketch-container">
+        <div class="heading">
+            <div class="heading-title">Etch-A-Sketch</div>
+        </div>
+        <div class="squares-container"></div>
+        <div class="buttons-container">
+            <button class="clear-colors">Clear Colors</button>
+            <button class="change-number-squares">Pointer Size</button>
+        </div>    
         <dialog id="custom-modal" class="modal-box">
             <div class="modal-content">
-                <div class="modal-heading">Number of squares</div>
+                <div class="modal-heading">
+                    <div class="modal-title">Change pointer size</div>
+                    <div class="modal-description">The higher the number, the smaller each pointer size</div>
+                </div> 
                 <div class="input-section">
                     <label for="input-squares">Enter a number between 2 and 100:</label>
                     <input id="input-squares" type="text">
@@ -26,13 +29,12 @@
                 <div class="modal-buttons">
                     <button id="continue-button">Continue</button>
                     <button id="cancel-button">Cancel</button>
-                </div>
-             
+                </div>             
             </div>
-
-        </dialog>
+        </dialog>    
+        
     </div>
-    <div class="squares-container"></div>
+    
     <div class="footer">TOP project by Cherry © 2026</div>
 
     <script type="module" src="./script.js"></script>

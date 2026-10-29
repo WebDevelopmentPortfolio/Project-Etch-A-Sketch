@@ -1,15 +1,20 @@
 
+
 ### Description
 
 Project Etch-A-Sketch from The Odin Project.
 
 Using HTML, CSS (Flexbox for layout), and JavaScript.
 
-https://webdevelopmentportfolio.github.io/Project-Etch-A-Sketch/
+Features:
+1. A button to reduce or enlarge grid sizes.
+2. A button to clear all colors.
+3. There's only a single color mode for now, which are random Hex colors. Will add more later.
+4. To draw, press the mouse down first, then hold to continue gliding around. To stop drawing, release the mouse. 
+5. To erase color in selected areas, simply click on those areas.
+6. For mobile, substitute for finger (of course! 😁).
 
-40x40 squares seems to be a sweet spot for mobile, portrait view (below). For landscape, I still don't know how to make it work; my layout is still messy.
+To see in action, go to https://webdevelopmentportfolio.github.io/Project-Etch-A-Sketch/ .
 
-<img src="mobile phone sketch 1.jpg" height="300">
 
-<img src="mobile phone sketch 2.jpg" height="300">
 

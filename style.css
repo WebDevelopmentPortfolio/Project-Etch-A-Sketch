@@ -13,56 +13,83 @@ body {
 }
 
 
-.heading {
+.sketch-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 4px;
+    flex: 0 0 100%;
+    min-height: 620px;
+    height: auto;
+    max-width: 580px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    background-color: #E6343B;
+    margin-top: 10px;
+    border-radius: 40px;
+    box-shadow: rgb(161, 159, 159) 0px 0px 3px 3px;
+
+}
+
+
+.heading {
+    display: flex;
+    align-items: center;
     text-align: center;
-    color:blueviolet;
-    padding-top: 20px;
+    padding-top: 10px;
+    flex: 1 1 100%;
+
 
 }
 
 .heading-title {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 28px;
     padding-bottom: 10px;
+    color: gold;
+
 }
 
 
-.description {
-    width: 380px;
-}
 
-
-.button-container {
+.buttons-container {
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     width: 100%;
     padding-bottom: 8px;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex: 1 1 100%;
 }
 
 
-
-
-.change-number-squares,
-.clear-colors {
+.clear-colors,
+.change-number-squares {
     background-color: #3882F6;
     color: white;
     padding: 6px;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 8px;
     border: none;
-    width: 380px;
+    width: 60px;
     
+
 }
 
+
+button:hover {
+    opacity: .7;
+}
+
+
+button:active {
+    opacity: .2;
+}
 
 
 /*freezes the background when dialog modal is open*/
@@ -71,13 +98,22 @@ body:has(dialog[open]) {
 }
 
 
+/*purpose here is to NOT make the dialog box permanently visible for display*/
+dialog:open {
+    display: flex;
+    flex-direction: column;
+    /*flex-wrap: wrap;*/
+    
+}
+
+
 .modal-box {
     padding: 24px;
-    border: 8px solid lightgray;
-    border-radius: 8px;
-    width: 400px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid lightgray;
+    border-radius: 18px;
+    width: 340px;
     text-align: center;
+    flex: 1 1 100%;
 
 }
 
@@ -98,19 +134,32 @@ body:has(dialog[open]) {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    color:brown;
+    
 
 }
 
+
 .modal-heading {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-bottom: 20px;
+    gap: 4px;
+
+}
+
+.modal-title {
     font-size: 20px;
     font-weight: bold;
 
 }
+
+
+.modal-description {
+    font-size: 12px;
+}
+
 
 .input-section {
     display:flex;
@@ -125,7 +174,6 @@ body:has(dialog[open]) {
 #input-squares {
     width: 200px;
     height: 22px;
-    color: brown;
     font-size: 16px;
     border-radius: 6px;
     
@@ -150,30 +198,31 @@ body:has(dialog[open]) {
     padding: 8px 10px;
     border-radius: 8px;
     border: none;
-    width: 160px;
+    width: 100px;
 
 }
 
 
 .squares-container {
-    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
+    flex: 1 1 100%;
+    max-width: 440px;
     width: 100%;
-    /*below is supposed to fix the squares to fit in mobile landscape mode, but it still doesn't work*/
-    aspect-ratio: 1 /1;
-    max-height: min(80svh, 100%);
+    background-color: white;
+    box-sizing: border-box;
+   
+    aspect-ratio: 1 /1
+   
     
 }
 
 .square {
-    border: 2px solid #6265F5;
-    border-radius: 8px;
     box-sizing: border-box;
     touch-action: none;
+    flex: 1 1 100%;
 
 }
 
@@ -181,11 +230,10 @@ body:has(dialog[open]) {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: auto;
-    height: 26px;
+    height: 20px;
     width: 100%;
-    background-color:burlywood;
+    
 
 }
