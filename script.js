@@ -1,6 +1,6 @@
 
 let squaresSize = 16;
-const targetContainerSize = 440;
+
 const buttonForSquares = document.querySelector(".change-number-squares");
 const buttonToClearColors = document.querySelector(".clear-colors");
 const buttonColorMode = document.querySelector(".color-mode");
@@ -22,24 +22,13 @@ function createSquares(squaresSize) {
     const squaresContainer = document.querySelector(".squares-container");
     squaresContainer.replaceChildren(); //clears the existing squares
 
-    /*there are tiny row gaps bug that prevents the user from drawing in certain areas of the screen in mobile view*/
-    /*const totalSquares = squaresSize * squaresSize;
-    const sizePercentage = 100 / squaresSize;*/
-    
-    /*below should solve it - let the computation of each square size be based on target max-width*/
-    let perfectSquareSize = Math.floor(targetContainerSize / squaresSize);
-
-    let finalContainerWidth = perfectSquareSize * squaresSize;
-    
-    squaresContainer.style.maxWidth = `${finalContainerWidth}px`;
-    
     const totalSquares = squaresSize * squaresSize;
+    let sizePercentage = 100 / squaresSize;
     
     for (let i = 0; i < totalSquares; i++) {
         const eachSquare = document.createElement("div");
         eachSquare.className = "square";
-        /*eachSquare.style.flex = `0 0 ${sizePercentage}%`;*/
-        eachSquare.style.flex = `0 0 ${perfectSquareSize}px`;
+        eachSquare.style.flex = `0 0 ${sizePercentage}%`;
         eachSquare.style.aspectRatio = "1 / 1";
         squaresContainer.appendChild(eachSquare);
 

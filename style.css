@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 0 0 100%;
+    flex: 0 1 100%;
     min-height: 620px;
     height: auto;
     max-width: 580px;
@@ -73,10 +73,7 @@ body {
 .color-mode,
 .change-number-squares {
     background-color:#E6343B;
-    /*color: white;*/
-    /*padding: 6px;*/
     font-size: 14px;
-    /*border-radius: 8px;*/
     border: none;
     width: 70px;
     position: relative;
@@ -237,10 +234,8 @@ dialog:open {
 .squares-container {
     display: flex;
     flex-wrap: wrap;
-    /*justify-content: center;
-    align-content: center;*/
     line-height: 0; /*make sure to remove tiny row gaps*/
-    flex: 0 1 100%;
+    flex: 1 1 100%;
     max-width: 440px;
     width: 100%;
     background-color: white;
