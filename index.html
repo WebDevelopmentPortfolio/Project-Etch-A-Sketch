@@ -13,10 +13,17 @@
         </div>
         <div class="squares-container"></div>
         <div class="buttons-container">
+            <button class="color-mode">
+                <img src="./images/knob.png">
+                <div class="button-text">Color Mode</div>
+            </button>
             <button class="clear-colors">Clear Colors</button>
-            <button class="change-number-squares">Pointer Size</button>
+            <button class="change-number-squares">
+                <img src="./images/knob.png">
+                <div class="button-text">Pointer Size</div>
+            </button>
         </div>    
-        <dialog id="custom-modal" class="modal-box">
+        <dialog id="modal-pointer-size" class="modal-box">
             <div class="modal-content">
                 <div class="modal-heading">
                     <div class="modal-title">Change pointer size</div>
@@ -26,15 +33,43 @@
                     <label for="input-squares">Enter a number between 16 and 100:</label>
                     <input id="input-squares" type="text">
                 </div>
-                <div class="modal-buttons">
-                    <button id="continue-button">Continue</button>
-                    <button id="cancel-button">Cancel</button>
+                <div class="modal-buttons-container">
+                    <button class="modal-button" id="continue-button-grid">Continue</button>
+                    <button class="modal-button" id="cancel-button-grid">Cancel</button>
                 </div>             
+            </div>
+        </dialog>
+        <dialog id="modal-color-mode" class="modal-box">
+            <div class="modal-content">
+                <div class="modal-heading">
+                    <div class="modal-title">Choose your Color</div>
+                </div>
+                <ul class="radio-input-section">
+                    <li>
+                        <input type="radio" id="black" name="color-option">
+                        <label for="black">Black</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="hex" name="color-option" checked>
+                        <label for="hex">Hex colors</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="rgb" name="color-option">
+                        <label for="rgb">RGB colors</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="gray" name="color-option">
+                        <label for="gray">Gray color</label>
+                    </li>
+                </ul>
+                <div class="modal-buttons-container">
+                    <button class="modal-button" id="continue-button-color">Continue</button>
+                    <button class="modal-button" id="cancel-button-color">Cancel</button>
+                </div>
             </div>
         </dialog>    
         
     </div>
-    
     <div class="footer">TOP project by Cherry © 2026</div>
 
     <script type="module" src="./script.js"></script>

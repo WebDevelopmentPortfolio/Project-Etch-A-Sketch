@@ -66,19 +66,24 @@ body {
     width: 100%;
     padding-bottom: 8px;
     flex: 0 1 100%;
+    
 }
 
 
-.clear-colors,
+.color-mode,
 .change-number-squares {
-    background-color: #3882F6;
-    color: white;
-    padding: 6px;
+    background-color:#E6343B;
+    /*color: white;*/
+    /*padding: 6px;*/
     font-size: 14px;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
     border: none;
-    width: 60px;
-    
+    width: 70px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -90,6 +95,32 @@ button:hover {
 
 button:active {
     opacity: .2;
+}
+
+
+.color-mode img,
+.change-number-squares img {
+    width: 65px;
+    
+}
+
+.button-text {
+    position: absolute;
+    z-index: 1;
+
+}
+
+
+.clear-colors {
+    background-color: #3882F6;
+    color: white;
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: none;
+    width: 120px;
+    
+
 }
 
 
@@ -181,7 +212,7 @@ dialog:open {
 }
 
 
-.modal-buttons {
+.modal-buttons-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,8 +222,7 @@ dialog:open {
 }
 
 
-#continue-button,
-#cancel-button {
+.modal-button {
     font-size: 16px;
     background-color: #3882F6;
     color: white;
@@ -226,6 +256,38 @@ dialog:open {
     flex: 1 1 100%;
 
 }
+
+
+
+.radio-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+
+}
+
+
+.radio-input-section li {
+    display: flex;
+    width: 200px;
+    gap: 20px;
+    
+
+}
+
+
+input[type="radio"] {
+    transform: scale(1.25);
+
+}
+
+
+li {
+    list-style: none;
+}
+
+
 
 .footer {
     display: flex;

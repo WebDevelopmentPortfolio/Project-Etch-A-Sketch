@@ -3,10 +3,17 @@ let squaresSize = 16;
 const targetContainerSize = 440;
 const buttonForSquares = document.querySelector(".change-number-squares");
 const buttonToClearColors = document.querySelector(".clear-colors");
-const modalBox = document.getElementById("custom-modal");
+const buttonColorMode = document.querySelector(".color-mode");
+const modalBoxGrid = document.getElementById("modal-pointer-size");
+const modalBoxColor = document.getElementById("modal-color-mode");
 const inputSquares = document.getElementById("input-squares");
-const continueBtn = document.getElementById("continue-button");
-const cancelBtn = document.getElementById("cancel-button");
+const continueBtnGrid = document.getElementById("continue-button-grid");
+const cancelBtnGrid = document.getElementById("cancel-button-grid");
+const continueBtnColor = document.getElementById("continue-button-color");
+const cancelBtnColor = document.getElementById("cancel-button-color");
+const colorModes = document.querySelectorAll('input[name="color-option"]')
+
+
 let isDrawing = false;
 
 
@@ -44,15 +51,18 @@ function createSquares(squaresSize) {
             if (eachSquare.style.backgroundColor !== '') {
                 eachSquare.style.backgroundColor = '';
             }
-            else {
+            else {                
                 mousedownTouchstartActions(eachSquare);
+                
             }
 
         });
 
         eachSquare.addEventListener('pointerenter', () => {
             if (isDrawing) {
-                eachSquare.style.backgroundColor = createColorsHex();
+                eachSquare.style.backgroundColor = squareBackgroundColor();
+                
+
             }
             
         });
@@ -69,14 +79,16 @@ function createSquares(squaresSize) {
 
 function mousedownTouchstartActions(element) {
     isDrawing = true;
-    element.style.backgroundColor = createColorsHex();
+    element.style.backgroundColor = squareBackgroundColor();
+
 }
 
 
+
 function createColorsSoftRGB() {
-    const red = Math.floor(Math.random() * 76) + 180;
-    const blue = Math.floor(Math.random() * 76) + 180;
-    const green = Math.floor(Math.random() * 76) + 180;
+    const red = Math.floor(Math.random() * 76) + 100;
+    const blue = Math.floor(Math.random() * 76) + 100;
+    const green = Math.floor(Math.random() * 76) + 100;
 
     return `rgb(${red},${blue},${green})`;
 
@@ -88,6 +100,39 @@ function createColorsHex() {
     return `#${base.toString(16)}`;
 
 }
+
+let backgroundColor = "";
+let selectedColorOption = "hex";
+
+function selectColorOption() {
+    const selectedRadioOption = modalBoxColor.querySelector('input[name="color-option"]:checked');
+    if (selectedRadioOption) {
+        selectedColorOption = selectedRadioOption.id;
+    }
+
+    return selectedColorOption;
+
+
+}
+
+
+function squareBackgroundColor() {
+    
+    if (selectedColorOption === "hex") {
+        backgroundColor = createColorsHex();
+    }
+    else if (selectedColorOption === "rgb") {
+        backgroundColor = createColorsSoftRGB();
+    }
+    else {
+        backgroundColor = selectedColorOption;
+    }
+
+    return backgroundColor;
+
+}
+
+
 
 //stop drawing on mouseup/touchend
 window.addEventListener('pointerup', () => {
@@ -103,12 +148,12 @@ createSquares(squaresSize);
 buttonForSquares.addEventListener('click', () => {
     inputSquares.value = squaresSize; //takes care of the case where when I enter an invalid number and I click Cancel and open the modal again, the invalid number shows up
     inputSquares.select(); //just highlight the entered text so user can easily change text
-    modalBox.showModal();
+    modalBoxGrid.showModal();
     
 })
 
 
-continueBtn.addEventListener('click', () => {
+continueBtnGrid.addEventListener('click', () => {
     const input = Number(inputSquares.value);
     inputSquares.select(); //just highlight the entered text so user can easily change text
 
@@ -119,7 +164,7 @@ continueBtn.addEventListener('click', () => {
     else {
         squaresSize = inputSquares.value;
         createSquares(squaresSize);
-        modalBox.close();
+        modalBoxGrid.close();
 
     }
 
@@ -129,16 +174,44 @@ continueBtn.addEventListener('click', () => {
 inputSquares.addEventListener('keydown', (event) => {
     if (event.key === "Enter") {
         event.preventDefault();
-        continueBtn.click();
+        continueBtnGrid.click();
     }
 
 })
 
 
-cancelBtn.addEventListener('click', () => {
+cancelBtnGrid.addEventListener('click', () => {
     inputSquares.select(); //just highlight the entered text so user can easily change text
-    modalBox.close();
+    modalBoxGrid.close();
 
 })
+
+
+buttonColorMode.addEventListener('click', () => {
+    const checkedRadio = document.getElementById(selectedColorOption);
+    if (checkedRadio) {
+        checkedRadio.checked = true;
+    }
+    modalBoxColor.showModal();
+
+});
+
+
+continueBtnColor.addEventListener('click', () => {
+    selectedColorOption = selectColorOption();
+    modalBoxColor.close();
+
+
+})
+
+
+
+cancelBtnColor.addEventListener('click', () => {
+    modalBoxColor.close();
+
+});
+
+
+
 
 
